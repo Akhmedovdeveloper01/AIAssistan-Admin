@@ -1,5 +1,6 @@
 import { getAcceptance } from "@/service/acceptance";
 import { getByIdChats, getChats } from "@/service/chat";
+import { getDashboard } from "@/service/dashboard";
 
 export function getChatsQuery() {
     return {
@@ -19,5 +20,12 @@ export function getAcceptanceQuery() {
     return {
         queryKey: ["acceptance"],
         queryFn: async () => getAcceptance(),
+    };
+}
+
+export function getDashboardQuery() {
+    return {
+        queryKey: ["stats"],
+        queryFn: async () => getDashboard(),
     };
 }
